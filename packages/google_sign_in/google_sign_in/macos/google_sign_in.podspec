@@ -2,7 +2,7 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 Pod::Spec.new do |s|
-  s.name             = 'google_sign_in_macos'
+  s.name             = 'google_sign_in'
   s.version          = '0.0.1'
   s.summary          = 'Google Sign-In plugin for Flutter'
   s.description      = <<-DESC
