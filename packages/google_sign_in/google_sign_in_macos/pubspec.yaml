@@ -1,9 +1,9 @@
-name: google_sign_in
+name: google_sign_in_macos
 description: Flutter plugin for Google Sign-In, a secure authentication system
-  for signing in with a Google account on Android and iOS.
-repository: https://github.com/flutter/plugins/tree/master/packages/google_sign_in/google_sign_in
+  for signing in with a Google account on Android and macOS.
+repository: https://github.com/flutter/plugins/tree/master/packages/google_sign_in/google_sign_in_macos
 issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+google_sign_in%22
-version: 5.1.0
+version: 5.2.0
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -11,23 +11,15 @@ environment:
 
 flutter:
   plugin:
+    implements: google_sign_in
     platforms:
-      android:
-        package: io.flutter.plugins.googlesignin
-        pluginClass: GoogleSignInPlugin
-      ios:
-        pluginClass: FLTGoogleSignInPlugin
       macos:
-        default_package: google_sign_in_macos
-      web:
-        default_package: google_sign_in_web
+        pluginClass: FLTGoogleSignInPlugin
 
 dependencies:
   flutter:
     sdk: flutter
   google_sign_in_platform_interface: ^2.0.1
-  google_sign_in_web: ^0.10.0
-  google_sign_in_macos: ^5.2.0
   meta: ^1.3.0
 
 dev_dependencies:
