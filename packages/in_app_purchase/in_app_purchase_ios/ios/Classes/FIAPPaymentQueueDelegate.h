@@ -15,6 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 API_AVAILABLE(ios(13))
 @interface FIAPPaymentQueueDelegate : NSObject <SKPaymentQueueDelegate>
 - (id)initWithMethodChannel:(FlutterMethodChannel *)methodChannel;
-@end
 
-NS_ASSUME_NONNULL_END
+- (BOOL)paymentQueueShouldShowPriceConsent:(SKPaymentQueue *)paymentQueue API_AVAILABLE(ios(13.4));
+@end
