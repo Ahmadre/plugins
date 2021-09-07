@@ -27,6 +27,7 @@ dependencies:
   in_app_purchase_macos:
     git:
       url: git://github.com/Ahmadre/plugins
+      ref: in-app-purchase-macos
       path: packages/in_app_purchase/in_app_purchase_macos
 
 dev_dependencies:

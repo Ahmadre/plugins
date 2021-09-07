@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:in_app_purchase_ios/in_app_purchase_ios.dart';
+import 'package:in_app_purchase_macos/in_app_purchase_macos.dart';
 import 'package:in_app_purchase_platform_interface/in_app_purchase_platform_interface.dart';
 
 import '../store_kit_wrappers.dart';
 
-/// Contains InApp Purchase features that are only available on iOS.
-class InAppPurchaseIosPlatformAddition extends InAppPurchasePlatformAddition {
+/// Contains InApp Purchase features that are only available on macOS.
+class InAppPurchaseMacOSPlatformAddition extends InAppPurchasePlatformAddition {
   /// Present Code Redemption Sheet.
   ///
-  /// Available on devices running iOS 14 and iPadOS 14 and later.
+  /// Available on devices running macOS 14 and iPadOS 14 and later.
   Future presentCodeRedemptionSheet() {
     return SKPaymentQueueWrapper().presentCodeRedemptionSheet();
   }
@@ -37,25 +37,14 @@ class InAppPurchaseIosPlatformAddition extends InAppPurchasePlatformAddition {
 
   /// Sets an implementation of the [SKPaymentQueueDelegateWrapper].
   ///
-  /// The [SKPaymentQueueDelegateWrapper] can be used to inform iOS how to
+  /// The [SKPaymentQueueDelegateWrapper] can be used to inform macOS how to
   /// finish transactions when the storefront changes or if the price consent
   /// sheet should be displayed when the price of a subscription has changed. If
-  /// no delegate is registered iOS will fallback to it's default configuration.
+  /// no delegate is registered macOS will fallback to it's default configuration.
   /// See the documentation on StoreKite's [`-[SKPaymentQueue delegate:]`](https://developer.apple.com/documentation/storekit/skpaymentqueue/3182429-delegate?language=objc).
   ///
   /// When set to `null` the payment queue delegate will be removed and the
   /// default behaviour will apply (see [documentation](https://developer.apple.com/documentation/storekit/skpaymentqueue/3182429-delegate?language=objc)).
   Future setDelegate(SKPaymentQueueDelegateWrapper? delegate) =>
       SKPaymentQueueWrapper().setDelegate(delegate);
-
-  /// Shows the price consent sheet if the user has not yet responded to a
-  /// subscription price change.
-  ///
-  /// Use this function when you have registered a [SKPaymentQueueDelegateWrapper]
-  /// (using the [setDelegate] method) and returned `false` when the
-  /// `SKPaymentQueueDelegateWrapper.shouldShowPriceConsent()` method was called.
-  ///
-  /// See documentation of StoreKit's [`-[SKPaymentQueue showPriceConsentIfNeeded]`](https://developer.apple.com/documentation/storekit/skpaymentqueue/3521327-showpriceconsentifneeded?language=objc).
-  Future showPriceConsentIfNeeded() =>
-      SKPaymentQueueWrapper().showPriceConsentIfNeeded();
 }

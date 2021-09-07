@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:in_app_purchase_platform_interface/in_app_purchase_platform_interface.dart';
 import 'package:in_app_purchase_android/in_app_purchase_android.dart';
 import 'package:in_app_purchase_ios/in_app_purchase_ios.dart';
+import 'package:in_app_purchase_macos/in_app_purchase_macos.dart';
 
 export 'package:in_app_purchase_platform_interface/in_app_purchase_platform_interface.dart'
     show
@@ -35,6 +36,8 @@ class InAppPurchase implements InAppPurchasePlatformAdditionProvider {
 
     if (defaultTargetPlatform == TargetPlatform.android) {
       InAppPurchaseAndroidPlatform.registerPlatform();
+    } else if (defaultTargetPlatform == TargetPlatform.macOS) {
+      InAppPurchaseMacOSPlatform.registerPlatform();
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       InAppPurchaseIosPlatform.registerPlatform();
     }
