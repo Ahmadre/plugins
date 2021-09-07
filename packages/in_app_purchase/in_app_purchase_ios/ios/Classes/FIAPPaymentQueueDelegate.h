@@ -18,3 +18,5 @@ API_AVAILABLE(ios(13))
 
 - (BOOL)paymentQueueShouldShowPriceConsent:(SKPaymentQueue *)paymentQueue API_AVAILABLE(ios(13.4));
 @end
+
+NS_ASSUME_NONNULL_END
